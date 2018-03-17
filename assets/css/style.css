@@ -58,33 +58,50 @@ nav a:first-child {
 	background-image:url('../images/chef_cooking.jpg');
   background-repeat:no-repeat;
 	height:300px;
+  background-size: 1000px 400px;
+
 }
 
 .panel-breakfast {
   background-image:url('../images/breakfast.jpg');
   height:200px;
+  background-repeat:no-repeat;
+  background-size: 400px 300px;
 
 }
 
 .panel-lunch {
   background-image:url('../images/burger.jpg');
   height:200px;
+  background-repeat:no-repeat;
+  background-size: 400px 300px;
 
 }
 
 .panel-dinner {
   background-image:url('../images/steak.jpg');
   height:200px;
+  background-repeat:no-repeat;
+  background-size: 400px 300px;
 
 }
 
 .panel-fish-meals {
   background-image:url('../images/fish_cutting_board.jpg');
   height:200px;
+  background-repeat:no-repeat;
+  background-size: 400px 300px;
 
 }
 .panel-vegetarian {
   background-image:url('../images/vegtables.jpg');
   height:200px;
+  background-repeat:no-repeat;
+  background-size: 400px 300px;
 
+}
+
+.search {
+  width: 40%;
+  text-align: center;
 }
