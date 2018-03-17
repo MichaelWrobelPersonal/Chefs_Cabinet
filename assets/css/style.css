@@ -1,0 +1,90 @@
+
+#masthead {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  margin: 0 0 30px;
+  overflow: auto;
+  color: #fff;
+  background: black;
+  border-bottom: 2px solid #ccc;
+}
+
+#logo {
+  float: left;
+  width: 250px;
+  height: 90px;
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 90px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background: black;
+}
+
+nav {
+  float: right;
+  margin-top: 25px;
+
+}
+
+nav a {
+  display: inline-block;
+  padding-left: 15px;
+  margin-left: 15px;
+  line-height: 18px;
+  color: #999;
+  text-decoration: none;
+  border-left: 1px solid #efefef;
+}
+
+nav a:first-child {
+  border-left: 0 none;
+}
+
+
+.jumbotron {
+	background-image:url('../images/ingredients.jpeg');
+	
+	color:white;
+  height: 400px;
+
+}
+
+ 
+.top-panel {
+	background-image:url('../images/chef_cooking.jpg');
+  background-repeat:no-repeat;
+	height:300px;
+}
+
+.panel-breakfast {
+  background-image:url('../images/breakfast.jpg');
+  height:200px;
+
+}
+
+.panel-lunch {
+  background-image:url('../images/burger.jpg');
+  height:200px;
+
+}
+
+.panel-dinner {
+  background-image:url('../images/steak.jpg');
+  height:200px;
+
+}
+
+.panel-fish-meals {
+  background-image:url('../images/fish_cutting_board.jpg');
+  height:200px;
+
+}
+.panel-vegetarian {
+  background-image:url('../images/vegtables.jpg');
+  height:200px;
+
+}
