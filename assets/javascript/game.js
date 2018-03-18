@@ -18,7 +18,7 @@ $(document).ready(function() {
 
  //queryURL for food API
  var recipe = "breakfast"
- var queryURL = "http://food2fork.com/api/search?key=1e354f8c049c83ba15960786f9b9d70c&q=" + recipe;
+ var queryURL = "https://cors-anywhere.herokuapp.com/food2fork.com/api/search?key=1e354f8c049c83ba15960786f9b9d70c&q=" + recipe;
  console.log(queryURL)
 
  //ajax request
