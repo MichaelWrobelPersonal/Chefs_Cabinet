@@ -5,7 +5,7 @@ $(document).ready(function() {
     authDomain: "chef-s-cabinet.firebaseapp.com",
     databaseURL: "https://chef-s-cabinet.firebaseio.com",
     projectId: "chef-s-cabinet",
-    storageBucket: "",
+    $storageBucket: "",
     messagingSenderId: "117249764862"
   };
   firebase.initializeApp(config);
@@ -15,10 +15,10 @@ $(document).ready(function() {
 
  // array for standard img buttons
 
-/* TODO - This gets put back in later
+
  //queryURL for food API
  var recipe = "breakfast"
- var queryURL = "http://food2fork.com/api/search?key=1e354f8c049c83ba15960786f9b9d70c&q=" + recipe;
+ var queryURL = "https://cors-anywhere.herokuapp.com/food2fork.com/api/search?key=1e354f8c049c83ba15960786f9b9d70c&q=" + recipe;
  console.log(queryURL)
 
  //ajax request
@@ -28,7 +28,7 @@ $(document).ready(function() {
  	}).then(function(result) {
  		console.log(result)
  	})
-*/
+
  //search button
 
  //clickable images
@@ -50,10 +50,10 @@ $(document).ready(function() {
      var api_key = "ZjebpqnjtPU1dcYD2xrpOO5nzMCLCi5K";
      var topic = $(this).attr("topic-name");
      // Example https://api.giphy.com/v1/gifs/search?api_key=ZjebpqnjtPU1dcYD2xrpOO5nzMCLCi5K&q=news&limit=10&offset=0&rating=G&lang=en
-     var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + api_key + "&q=" + topic + "&limit=10&offset=0&rating=G&lang=en";
+     var qeuryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + api_key + "&q=" + topic + "&limit=10&offset=0&rating=G&lang=en";
  
      $.ajax({
-         url: queryURL,
+         url: qeuryURL,
          method: "GET"
      }).then(function (response)
      {
@@ -134,6 +134,8 @@ $(document).ready(function() {
  
      // create the figure
      var fig = $("<figure>");
+        // Adding and ID
+         fig.addClass("topic-figure");
      // create the image
      var elem = $("<img>");
          // Adding an ID
@@ -150,7 +152,7 @@ $(document).ready(function() {
          elem.attr("alt", this.title);
          elem.attr("title", this.title);
  
-         // Set the hieght and width
+         // Set the height and width
          elem.attr("height", this.height );
          elem.attr("width", this.width );
  

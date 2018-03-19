@@ -105,3 +105,25 @@ nav a:first-child {
   width: 40%;
   text-align: center;
 }
+
+#topic-figures { 
+  overflow: auto;
+  width: 100%;
+  max-width: 300px;
+}
+.topic-figure
+{
+  margin: 5px;
+  display: inline-block;
+}
+.topic-image {
+  margin: 5px;
+  /* float: none; */
+}
+.topic-title {
+ color: darkslategrey;
+ margin: 2px;
+ max-width: 200px;
+}
+#endof-#topic-figures { float: clear; }
+
