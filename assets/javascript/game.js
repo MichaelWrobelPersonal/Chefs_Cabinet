@@ -17,19 +17,35 @@ $(document).ready(function() {
 
 
  //queryURL for food API
- var recipe = "breakfast"
- var queryURL = "https://cors-anywhere.herokuapp.com/food2fork.com/api/search?key=1e354f8c049c83ba15960786f9b9d70c&q=" + recipe;
+ var APIKey = "1e354f8c049c83ba15960786f9b9d70c";
+ var recipe = "";
+ var queryURL = "https://cors-anywhere.herokuapp.com/food2fork.com/api/search?key=" + APIKey + "&q=" + recipe;
  console.log(queryURL)
 
  //ajax request
  	$.ajax({
  		url: queryURL,
- 		method: "GET"
+ 		method: "GET",
+    headers: {
+      "Accept": "application/json"
+    },
+    dataType: "json"
  	}).then(function(result) {
  		console.log(result)
+
+    for(var i = 0; i < Math.min(5, result.recipes.length); i++) {
+      console.log(result.recipes[i].image_url);
+
+      
+      var img = $("<img>");
+      img.attr("src", result.recipes[i].image_url);
+      $("#results").append(img);
+    }
+
+
  	})
 
- //search button
+
 
  //clickable images
  
