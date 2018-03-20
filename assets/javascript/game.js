@@ -36,10 +36,20 @@ $(document).ready(function() {
     for(var i = 0; i < Math.min(5, result.recipes.length); i++) {
       console.log(result.recipes[i].image_url);
 
+      var title = $("<h3>");
+      title.text(result.recipes[i].title);
+      $("#results").append(title);
       
+      var link = $("<a>");
+      link.attr("href", result.recipes[i].source_url);
+      $("#results").append(link);
+
       var img = $("<img>");
       img.attr("src", result.recipes[i].image_url);
-      $("#results").append(img);
+      $(link).html(img);
+
+
+
     }
 
 
