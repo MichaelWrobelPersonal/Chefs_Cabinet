@@ -22,23 +22,6 @@ $(document).ready(function() {
  var queryURL = "https://cors-anywhere.herokuapp.com/food2fork.com/api/search?key=" + APIKey + "&q=" + recipe;
  console.log(queryURL)
 
-var match = location.search.match(/^\?q=(.+)$/);
-if(match && match[1]) {
-  $("#search").val(match[1]);
-}
-/*$("#recipeNav > a").on("click", function(e) {
-  e.preventDefault();
-  
-});*/
-
-// if(mealtype) {
-//   switch(mealtype){
-//     case "breakfast": 
-//     getTopicImages(topics[0])
-//     break;
-
-//   }
-// }
  //ajax request
  	$.ajax({
  		url: queryURL,
@@ -53,25 +36,27 @@ if(match && match[1]) {
     for(var i = 0; i < Math.min(5, result.recipes.length); i++) {
       console.log(result.recipes[i].image_url);
 
-      var title = $("<h3>");
-      title.text(result.recipes[i].title);
-      $("#results").append(title);
-      
-      var link = $("<a>");
-      link.attr("href", result.recipes[i].source_url);
-      $("#results").append(link);
+      var searchTitle = $("<a>");
+      searchTitle.attr("href", result.recipes[i].source_url);
+      $(searchTitle).append("<h3>" + result.recipes[i].title + "</h3>");
+      $("#results").append(searchTitle);
+       
+      var recipeLink = $("<a>");
+      recipeLink.attr("href", result.recipes[i].source_url);
+      $("#results").append(recipeLink);
 
       var img = $("<img>");
       img.attr("src", result.recipes[i].image_url);
-      $(link).html(img);
-
-
+      $(recipeLink).html(img);
 
     }
 
 
  	})
 
+
+
+ //clickable images
  
 
  //////////////////////////////////
@@ -81,14 +66,14 @@ if(match && match[1]) {
  var topics = ["Breakfast", "Lunch", "Dinner", "Fish", "Vegetarian"];
  
  // Get images for the Topic method
- function getTopicImages(topic) {
+ function getTopicImages() {
  
 // TODO - replace GIPHY API with the FoodItem API, put this in a method as in the API TODO list and
 //        and leave it to Kevin to fill in the API Issues.
 
      // The below code gets the images from the GIPHY API
      var api_key = "ZjebpqnjtPU1dcYD2xrpOO5nzMCLCi5K";
-     //var topic = $(this).attr("topic-name");
+     var topic = $(this).attr("topic-name");
      // Example https://api.giphy.com/v1/gifs/search?api_key=ZjebpqnjtPU1dcYD2xrpOO5nzMCLCi5K&q=news&limit=10&offset=0&rating=G&lang=en
      var qeuryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + api_key + "&q=" + topic + "&limit=10&offset=0&rating=G&lang=en";
  

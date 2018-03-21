@@ -133,5 +133,8 @@ nav a:first-child {
   height:200px;
   background-repeat:no-repeat;
   background-size: 400px 300px;
+}
 
+.searchTitle {
+  font-size: 30px;
 }
