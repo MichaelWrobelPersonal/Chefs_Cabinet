@@ -134,5 +134,8 @@ nav a:first-child {
   background-repeat:no-repeat;
   background-size: 400px 300px;
 }
+#search-recipes {
+  background-color:black;
+}
 
 
