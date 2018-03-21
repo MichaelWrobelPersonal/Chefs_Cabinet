@@ -39,20 +39,21 @@ function searchRecipes(recipe) {
       console.log(result.recipes[i].image_url);
 
       var searchTitle = $("<a>");
+      var publisher = $("<a>");
+      var recipeLink = $("<a>");
+      var img = $("<img>");
+
       searchTitle.attr("href", result.recipes[i].source_url);
       $(searchTitle).append("<h3>" + result.recipes[i].title + "</h3>");
       $("#results").append(searchTitle);
 
-      var publisher = $("<a>");
       publisher.attr("href", result.recipes[i].publisher_url);
       $(publisher).append("<h4>(" + result.recipes[i].publisher + ")</h4>");
       $("#results").append(publisher);
        
-      var recipeLink = $("<a>");
       recipeLink.attr("href", result.recipes[i].source_url);
       $("#results").append(recipeLink);
 
-      var img = $("<img>");
       img.attr("src", result.recipes[i].image_url);
       $(recipeLink).html(img);
 
