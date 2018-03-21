@@ -11,8 +11,6 @@
   <script src="https://code.jquery.com/jquery.js"></script>
   <!--css-->
   <link rel="stylesheet" href="assets/css/style.css">
-  <!-- link to the recipe page  -->
-<link rel="stylesheet" href="assets/recipe.html">
   
 <header id="masthead">
     <div class="container">
@@ -44,34 +42,17 @@
 	      <h4 class="text-center"></h4>
 	      <hr>
 	      <div class="search">
-			  <label for="search">What are you hungry for?:</label>
-			  <input type="text" class="form-control" id="search">
+	      	<form id="recipe-form">
+			  <label for="recipe-input">What are you hungry for?:</label>
+			  <input type="text" class="form-control" id="recipe-input">
+			  <br>
+			  <input id="search-recipes" type="submit" value="Search">
+			</form>
 		  </div>      
 	    </div>
-
-	    <!-- Topics buttons get added here -->
-									 <div id="topic-buttons">
-                    </div>
-
-                    <!-- Form supporting addition of new topics -->
-                    <form id="topic-form">
-                        <label for="topic-input" class="topic-text">Add a topic</label>
-                        <input type="text" id="topic-input" class="topic-text"><br>
-                        <input type="submit" id="add-topic" value="Submit">
-                    </form>
-
-                    <p id="image-instructions">Click on image to animate it</p>
-
-								<!-- End of Scaffolding -->
-							<div class=bottom-panel>
-									<div id="topic-figures" ></div>
-								  <!-- Topic figures get added here -->
-									<div id="topic-images" >The images go here!</div>
-								<div id="endof-topic-figures"></div>
-							</div>
 		<div>
 			<div class="col-lg-12">
-	        	
+	        	<!-- Loss Count-->
 		        <div class="panel panel-default">
 		          <div class="panel-food">
 		            <h3 class="panel text-center">Search Results</h3>
