@@ -15,10 +15,9 @@ $(document).ready(function() {
 
  // array for standard img buttons
 
-
+function searchRecipes(recipe) {
  //queryURL for food API
  var APIKey = "1e354f8c049c83ba15960786f9b9d70c";
- var recipe = "";
  var queryURL = "https://cors-anywhere.herokuapp.com/food2fork.com/api/search?key=" + APIKey + "&q=" + recipe;
  console.log(queryURL)
 
@@ -32,6 +31,8 @@ $(document).ready(function() {
     dataType: "json"
  	}).then(function(result) {
  		console.log(result)
+
+    $("#results").empty();
 
     for(var i = 0; i < Math.min(30, result.recipes.length); i++) {
       console.log(result.recipes[i].image_url);
@@ -51,12 +52,18 @@ $(document).ready(function() {
 
     }
 
-
  	})
+}
 
+$("#search-recipes").on("click", function(event) {
+  event.preventDefault();
 
+  var inputRecipe = $("#recipe-input").val().trim();
 
- //clickable images
+  searchRecipes(inputRecipe);
+
+  $("#recipe-input").val("");
+})
  
 
  //////////////////////////////////
