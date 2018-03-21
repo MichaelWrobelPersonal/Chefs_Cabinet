@@ -41,6 +41,11 @@ function searchRecipes(recipe) {
       searchTitle.attr("href", result.recipes[i].source_url);
       $(searchTitle).append("<h3>" + result.recipes[i].title + "</h3>");
       $("#results").append(searchTitle);
+
+      var publisher = $("<a>");
+      publisher.attr("href", result.recipes[i].publisher_url);
+      $(publisher).append("<h4>(" + result.recipes[i].publisher + ")</h4>");
+      $("#results").append(publisher);
        
       var recipeLink = $("<a>");
       recipeLink.attr("href", result.recipes[i].source_url);
