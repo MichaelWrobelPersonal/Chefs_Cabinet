@@ -33,7 +33,7 @@ $(document).ready(function() {
  	}).then(function(result) {
  		console.log(result)
 
-    for(var i = 0; i < Math.min(5, result.recipes.length); i++) {
+    for(var i = 0; i < Math.min(30, result.recipes.length); i++) {
       console.log(result.recipes[i].image_url);
 
       var searchTitle = $("<a>");
