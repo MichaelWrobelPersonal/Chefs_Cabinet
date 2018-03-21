@@ -71,28 +71,7 @@ if(match && match[1]) {
 
 
  	})
-<<<<<<< HEAD
-// getTopicImages(getUrlVars()["mealType"])
-// alert(getUrlVars()["mealType"])
-// function getUrlVars()
-// {
-//     var vars = [], hash;
-//     var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-//     for(var i = 0; i < hashes.length; i++)
-//     {
-//         hash = hashes[i].split('=');
-//         vars.push(hash[0]);
-//         vars[hash[0]] = hash[1];
-//     }
-//     return vars;
-// }
- //search button
-=======
 
-
->>>>>>> 8a143801cf02ec71d32f2e5d6691a6163cf06574
-
- //clickable images
  
 
  //////////////////////////////////
