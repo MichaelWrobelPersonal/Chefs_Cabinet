@@ -26,19 +26,7 @@ var match = location.search.match(/^\?q=(.+)$/);
 if(match && match[1]) {
   $("#search").val(match[1]);
 }
-/*$("#recipeNav > a").on("click", function(e) {
-  e.preventDefault();
-  
-});*/
 
-// if(mealtype) {
-//   switch(mealtype){
-//     case "breakfast": 
-//     getTopicImages(topics[0])
-//     break;
-
-//   }
-// }
  //ajax request
  	$.ajax({
  		url: queryURL,
