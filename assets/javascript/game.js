@@ -17,8 +17,9 @@ $(document).ready(function() {
 
 
  //queryURL for food API
- var recipe = "breakfast"
- var queryURL = "https://cors-anywhere.herokuapp.com/food2fork.com/api/search?key=1e354f8c049c83ba15960786f9b9d70c&q=" + recipe;
+ var APIKey = "1e354f8c049c83ba15960786f9b9d70c";
+ var recipe = "";
+ var queryURL = "https://cors-anywhere.herokuapp.com/food2fork.com/api/search?key=" + APIKey + "&q=" + recipe;
  console.log(queryURL)
 
 var match = location.search.match(/^\?q=(.+)$/);
@@ -41,10 +42,36 @@ if(match && match[1]) {
  //ajax request
  	$.ajax({
  		url: queryURL,
- 		method: "GET"
+ 		method: "GET",
+    headers: {
+      "Accept": "application/json"
+    },
+    dataType: "json"
  	}).then(function(result) {
  		console.log(result)
+
+    for(var i = 0; i < Math.min(5, result.recipes.length); i++) {
+      console.log(result.recipes[i].image_url);
+
+      var title = $("<h3>");
+      title.text(result.recipes[i].title);
+      $("#results").append(title);
+      
+      var link = $("<a>");
+      link.attr("href", result.recipes[i].source_url);
+      $("#results").append(link);
+
+      var img = $("<img>");
+      img.attr("src", result.recipes[i].image_url);
+      $(link).html(img);
+
+
+
+    }
+
+
  	})
+<<<<<<< HEAD
 // getTopicImages(getUrlVars()["mealType"])
 // alert(getUrlVars()["mealType"])
 // function getUrlVars()
@@ -60,6 +87,10 @@ if(match && match[1]) {
 //     return vars;
 // }
  //search button
+=======
+
+
+>>>>>>> 8a143801cf02ec71d32f2e5d6691a6163cf06574
 
  //clickable images
  
