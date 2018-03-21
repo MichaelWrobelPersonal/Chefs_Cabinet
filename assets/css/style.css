@@ -125,5 +125,13 @@ nav a:first-child {
  margin: 2px;
  max-width: 200px;
 }
-#endof-#topic-figures { float: clear; }
+#endof-#topic-figures { 
+  float: clear;
+  }
+.panel-dessert {
+  background-image:url('../images/drink.jpg');
+  height:200px;
+  background-repeat:no-repeat;
+  background-size: 400px 300px;
 
+}

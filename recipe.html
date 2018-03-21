@@ -11,6 +11,8 @@
   <script src="https://code.jquery.com/jquery.js"></script>
   <!--css-->
   <link rel="stylesheet" href="assets/css/style.css">
+  <!-- link to the recipe page  -->
+<link rel="stylesheet" href="assets/recipe.html">
   
 <header id="masthead">
     <div class="container">
@@ -46,9 +48,30 @@
 			  <input type="text" class="form-control" id="search">
 		  </div>      
 	    </div>
+
+	    <!-- Topics buttons get added here -->
+									 <div id="topic-buttons">
+                    </div>
+
+                    <!-- Form supporting addition of new topics -->
+                    <form id="topic-form">
+                        <label for="topic-input" class="topic-text">Add a topic</label>
+                        <input type="text" id="topic-input" class="topic-text"><br>
+                        <input type="submit" id="add-topic" value="Submit">
+                    </form>
+
+                    <p id="image-instructions">Click on image to animate it</p>
+
+								<!-- End of Scaffolding -->
+							<div class=bottom-panel>
+									<div id="topic-figures" ></div>
+								  <!-- Topic figures get added here -->
+									<div id="topic-images" >The images go here!</div>
+								<div id="endof-topic-figures"></div>
+							</div>
 		<div>
 			<div class="col-lg-12">
-	        	<!-- Loss Count-->
+	        	
 		        <div class="panel panel-default">
 		          <div class="panel-food">
 		            <h3 class="panel text-center"> </h3>

@@ -21,6 +21,23 @@ $(document).ready(function() {
  var queryURL = "https://cors-anywhere.herokuapp.com/food2fork.com/api/search?key=1e354f8c049c83ba15960786f9b9d70c&q=" + recipe;
  console.log(queryURL)
 
+var match = location.search.match(/^\?q=(.+)$/);
+if(match && match[1]) {
+  $("#search").val(match[1]);
+}
+/*$("#recipeNav > a").on("click", function(e) {
+  e.preventDefault();
+  
+});*/
+
+// if(mealtype) {
+//   switch(mealtype){
+//     case "breakfast": 
+//     getTopicImages(topics[0])
+//     break;
+
+//   }
+// }
  //ajax request
  	$.ajax({
  		url: queryURL,
@@ -28,7 +45,20 @@ $(document).ready(function() {
  	}).then(function(result) {
  		console.log(result)
  	})
-
+// getTopicImages(getUrlVars()["mealType"])
+// alert(getUrlVars()["mealType"])
+// function getUrlVars()
+// {
+//     var vars = [], hash;
+//     var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+//     for(var i = 0; i < hashes.length; i++)
+//     {
+//         hash = hashes[i].split('=');
+//         vars.push(hash[0]);
+//         vars[hash[0]] = hash[1];
+//     }
+//     return vars;
+// }
  //search button
 
  //clickable images
@@ -41,14 +71,14 @@ $(document).ready(function() {
  var topics = ["Breakfast", "Lunch", "Dinner", "Fish", "Vegetarian"];
  
  // Get images for the Topic method
- function getTopicImages() {
+ function getTopicImages(topic) {
  
 // TODO - replace GIPHY API with the FoodItem API, put this in a method as in the API TODO list and
 //        and leave it to Kevin to fill in the API Issues.
 
      // The below code gets the images from the GIPHY API
      var api_key = "ZjebpqnjtPU1dcYD2xrpOO5nzMCLCi5K";
-     var topic = $(this).attr("topic-name");
+     //var topic = $(this).attr("topic-name");
      // Example https://api.giphy.com/v1/gifs/search?api_key=ZjebpqnjtPU1dcYD2xrpOO5nzMCLCi5K&q=news&limit=10&offset=0&rating=G&lang=en
      var qeuryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + api_key + "&q=" + topic + "&limit=10&offset=0&rating=G&lang=en";
  
