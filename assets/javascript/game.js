@@ -15,6 +15,23 @@ $(document).ready(function() {
 
  // array for standard img buttons
 
+function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+
+if(getUrlVars()["q"]) {
+  searchRecipes(getUrlVars()["q"])
+}
+
 function searchRecipes(recipe) {
  //queryURL for food API
  var APIKey = "1e354f8c049c83ba15960786f9b9d70c";
@@ -71,6 +88,7 @@ $("#search-recipes").on("click", function(event) {
 
   $("#recipe-input").val("");
 })
+
  
 
  //////////////////////////////////
