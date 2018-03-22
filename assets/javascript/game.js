@@ -79,15 +79,4 @@ function searchRecipes(recipe) {
  	})
 }
 
-$("#search-recipes").on("click", function(event) {
-  event.preventDefault();
-
-  var inputRecipe = $("#recipe-input").val().trim();
-
-  searchRecipes(inputRecipe);
-
-  $("#recipe-input").val("");
-})
-
- 
 });
