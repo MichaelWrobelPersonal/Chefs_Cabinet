@@ -13,6 +13,10 @@ $(document).ready(function() {
   //variable to rep the database
   var database = firebase.database();
 
+  // Get users location
+  var location = getLocation();
+  console.log(location);
+  
 // These handle the images
 $("#breakfast").on("click", function(event) { location.href = "recipe.html?q=breakfast" });
 $("#lunch").on("click", function(event) { location.href = "recipe.html?q=lunch"  });
@@ -115,6 +119,25 @@ function searchRecipes(recipe) {
   });
 
 
-
-
+  function getLocation() {
+    //queryURL for food API
+//    var Key = "AIzaSyCn2ZDoCa4-0SJWmCM3l_BGiB16qMZjK8c";
+    var key = "AIzaSyAowfvSBIR3IYnM0IuMk-hfbbntZaLpuo4";
+    var query = "https://www.googleapis.com/geolocation/v1/geolocate?key=" + key;
+    console.log(query);
+    var whereiam ="";
+    //ajax request
+      $.ajax({
+        url: query,
+        method: "GET",
+       headers: {
+         "Accept": "application/json"
+       },
+       dataType: "json"
+      }).then(function(result) {
+        console.log(result);
+        whereiam = result;
+      });
+      return whereiam;
+  }
 });
