@@ -94,7 +94,7 @@ function searchRecipes(recipe) {
 //     url: asdfalsdjfj
 // }
   fetch('https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+Cleveland&key=AIzaSyDOotByZwSbRmyaQlyEIjGbr8nZNG_kb44')
-  .then(response => response.json()) .then(data => {console.log(data)
+  .then(response => response.json()) .then(data => {console.log(data)})
 
    
 
@@ -103,7 +103,7 @@ function searchRecipes(recipe) {
      $("#photos").html("<img src=" + photos + ">")
   });
 
-});
+
 }
 
 });
