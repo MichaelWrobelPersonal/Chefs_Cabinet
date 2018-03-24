@@ -98,9 +98,9 @@ function searchRecipes(recipe) {
 
    
 
-  // photos = data.results[0].icon
-  // console.log(photos)
-  // $("#photos").html("<img src=" + photos + ">")
+     photos = data.results[0].icon
+     console.log(photos)
+     $("#photos").html("<img src=" + photos + ">")
   });
 
 });
