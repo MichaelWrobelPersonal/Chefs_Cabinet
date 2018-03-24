@@ -86,36 +86,35 @@ function searchRecipes(recipe) {
     }
 
  	})
+}
 
-
-  $("#search-locations").on("click", function(){
+  $("#search-locations").on("click", function(event){
+    console.log('hi')
+    event.preventDefault()
 // $.ajax{
 //     header: get,
 //     url: asdfalsdjfj
 // }
   const params = $.param({
     "query": $("#place-input").val() + " in Cleveland, OH",
-    "key": "AIzaSyDOotByZwSbRmyaQlyEIjGbr8nZNG_kb44",
+    "key": "AIzaSyDOotByZwSbRmyaQlyEIjGbr8nZNG_kb44"
   })
   fetch('https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?' + params)
     .then(response => response.json())
     .then(data => {
+      console.log(data)
       for(var i = 0; i < Math.min(10, data.results.length); i++) {
         var content = $("<div>");
         content.text(data.results[i].name);
         $(".panel-place").append(content);
       }
-      console.log(data)
+      photos = data.results[0].icon
+      console.log(photos)
+      $("#photos").html("<img src=" + photos + ">")
     })
-
-   
-
-     photos = data.results[0].icon
-     console.log(photos)
-     $("#photos").html("<img src=" + photos + ">")
   });
 
 
-}
+
 
 });
