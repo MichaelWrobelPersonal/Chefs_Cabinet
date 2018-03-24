@@ -93,8 +93,20 @@ function searchRecipes(recipe) {
 //     header: get,
 //     url: asdfalsdjfj
 // }
-  fetch('https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+Cleveland&key=AIzaSyDOotByZwSbRmyaQlyEIjGbr8nZNG_kb44')
-  .then(response => response.json()) .then(data => {console.log(data)})
+  const params = $.param({
+    "query": $("#place-input").val() + " in Cleveland, OH",
+    "key": "AIzaSyDOotByZwSbRmyaQlyEIjGbr8nZNG_kb44",
+  })
+  fetch('https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?' + params)
+    .then(response => response.json())
+    .then(data => {
+      for(var i = 0; i < Math.min(10, data.results.length); i++) {
+        var content = $("<div>");
+        content.text(data.results[i].name);
+        $(".panel-place").append(content);
+      }
+      console.log(data)
+    })
 
    
 
