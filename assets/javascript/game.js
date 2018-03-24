@@ -18,7 +18,7 @@ $("#breakfast").on("click", function(event) { location.href = "recipe.html?q=bre
 $("#lunch").on("click", function(event) { location.href = "recipe.html?q=lunch"  });
 $("#dinner").on("click", function(event) { location.href = "recipe.html?q=dinner" });
 $("#fish-meals").on("click", function(event) { location.href = "recipe.html?q=fish meals" });
-$("#vegetarian").on("click", function(event) { location.href = "recipe.html?q=vegetarian" });
+$("#vegan").on("click", function(event) { location.href = "recipe.html?q=vegan" });
 $("#dessert").on("click", function(event) { location.href = "recipe.html?q=dessert" });
 
 // These handle the search box
@@ -86,6 +86,8 @@ function searchRecipes(recipe) {
     }
 
  	})
+
+
   $("#search-locations").on("click", function(){
 // $.ajax{
 //     header: get,
