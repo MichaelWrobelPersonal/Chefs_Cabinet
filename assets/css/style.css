@@ -139,5 +139,8 @@ nav a:first-child {
 #search-recipes {
   background-color:black;
 }
+.panel {
+  background-image:url('../images/fresh_snow.png');
+}
 
 

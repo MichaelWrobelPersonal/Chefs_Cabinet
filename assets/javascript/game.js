@@ -37,7 +37,7 @@ function searchRecipes(recipe) {
  var APIKey = "1e354f8c049c83ba15960786f9b9d70c";
  var queryURL = "https://cors-anywhere.herokuapp.com/food2fork.com/api/search?key=" + APIKey + "&q=" + recipe;
  console.log(queryURL)
-
+ 
 
  //ajax request
  	$.ajax({
@@ -77,6 +77,22 @@ function searchRecipes(recipe) {
     }
 
  	})
+  $("#search-locations").on("click", function(){
+// $.ajax{
+//     header: get,
+//     url: asdfalsdjfj
+// }
+  fetch('https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+Cleveland&key=AIzaSyDOotByZwSbRmyaQlyEIjGbr8nZNG_kb44')
+  .then(response => response.json()) .then(data => {console.log(data)
+
+   
+
+  // photos = data.results[0].icon
+  // console.log(photos)
+  // $("#photos").html("<img src=" + photos + ">")
+  });
+
+});
 }
 
 });
