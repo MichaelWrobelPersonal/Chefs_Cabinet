@@ -62,14 +62,20 @@ nav a:first-child {
 .panel-breakfast {
   background-image:url('../images/breakfast.jpg');
   height:200px;
+  max-width: 400px;
   background-repeat:no-repeat;
   background-size: 400px 300px;
 
+}
+#breakfast-form {
+  height:200px;
+  width:400px;;
 }
 
 .panel-lunch {
   background-image:url('../images/burger.jpg');
   height:200px;
+  max-width: 400px;
   background-repeat:no-repeat;
   background-size: 400px 300px;
 
@@ -78,6 +84,7 @@ nav a:first-child {
 .panel-dinner {
   background-image:url('../images/steak.jpg');
   height:200px;
+  max-width: 400px;
   background-repeat:no-repeat;
   background-size: 400px 300px;
 
@@ -86,6 +93,7 @@ nav a:first-child {
 .panel-fish-meals {
   background-image:url('../images/fish_cutting_board.jpg');
   height:200px;
+  max-width: 400px;
   background-repeat:no-repeat;
   background-size: 400px 300px;
 

@@ -13,8 +13,15 @@ $(document).ready(function() {
   //variable to rep the database
   var database = firebase.database();
 
- // array for standard img buttons
+// These handle the images
+$("#breakfast").on("click", function(event) { location.href = "recipe.html?q=breakfast" });
+$("#lunch").on("click", function(event) { location.href = "recipe.html?q=lunch"  });
+$("#dinner").on("click", function(event) { location.href = "recipe.html?q=dinner" });
+$("#fish-meals").on("click", function(event) { location.href = "recipe.html?q=fish meals" });
+$("#vegetarian").on("click", function(event) { location.href = "recipe.html?q=vegetarian" });
+$("#dessert").on("click", function(event) { location.href = "recipe.html?q=dessert" });
 
+// These handle the search box
 function getUrlVars()
 {
     var vars = [], hash;
@@ -29,8 +36,10 @@ function getUrlVars()
 }
 
 if(getUrlVars()["q"]) {
-  searchRecipes(getUrlVars()["q"])
+  searchRecipes(getUrlVars()["q"]);
 }
+
+$()
 
 function searchRecipes(recipe) {
  //queryURL for food API
