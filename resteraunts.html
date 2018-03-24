@@ -31,67 +31,46 @@
 </head>
 <body>
 
-
-  <!-- Overall Bootstrap Grid -->
-	<div class="container">
+  	<!-- Overall Bootstrap Grid -->
+	  <div class="container">
 	    <!-- Jumbotron with Title -->
 	    <div class="jumbotron">
 	      <h1 class="text-center"><strong>The Good Stuff!</strong></h1>
 	      <h4 class="text-center"></h4>
 	      <hr>
 	      <div class="text-center">
-	      	<form action="recipe.html" method="GET" id="recipe-form">
-			  <label for="recipe-input">What are you hungry for?:</label>
-			  <input type="text" name="q" class="form-control" id="recipe-input">
-			  <br>
-			  <input id="search-recipes" type="submit" value="Search">
-			</form>
+	    	<form action="recipe.html" method="GET" id="recipe-form">
+			  	<label for="recipe-input">What are you hungry for?:</label>
+			  	<input type="text" name="q" class="form-control" id="recipe-input">
+			  	<br>
+			  	<input id="search-recipes" type="submit" value="Search">
+				</form>
 		  </div>      
-	    </div>
+	  </div>
 		<div>
-			<div class="col-lg-8">
-	        	<!-- Image Col-->
-		        <div class="panel panel-default">
-		          <div class="panel-food">
-		            <h3 class="panel text-center">Food Results</h3>
-		          </div>
-		          <div class="panel">
-		          <div class="text-center" id="results">	              	
-		          </div>
-		          </div>
-		        </div>
-	        </div>
-	        <div class="col-lg-4">
-	        	<!-- Google Place-->
-		        <div class="panel panel-default">
-		          <div class="panel-place">
-		            <h3 class="panel text-center">Type in a Food choice for Nearby Restaurants </h3>
-		          </div>
-		          <div class="panel">
-		          <div class="text-center" id="results">
-							<form id="resteraunt-form">
-			           <input type="text" name="place" class="place-control" id="place-input">
-				  				<br>
-									<input id="search-locations" type="submit" value="Search">
-							</form>
+			<div>
+				<!-- Image Col-->
+				<div class="panel panel-default">
+					<div class="panel-restaurants">
+						<h3 class="panel text-center">Restuarants</h3>
+					</div>
+					<div class="panel">
+						<div class="text-center" id="map">
 							<iframe
-							width="600"
-							height="450"
-							frameborder="0" style="border:0"
-							src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBiqzJxSgSz6f4LGXMnfIC3VEC-NQe3d_g
-							&q=restaurant,Cleveland+OH">
+										width="100%"
+										height="600px"
+										frameborder="0" style="border:0"
+										src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBiqzJxSgSz6f4LGXMnfIC3VEC-NQe3d_g
+										&q=restaurant,Cleveland+OH">
 							</iframe>
-
-		          </div>
-		          </div>
-		        </div>
-	        </div>
+						</div>
+					</div>
+				</div>
+		  </div>
 		</div>
 
-	</div>
-
-<!--javaScript-->
+	<!--javaScript-->
   <script src="assets/javascript/game.js"></script>
-		   
 
+</body>		   
 </html>
