@@ -2,86 +2,80 @@
 <html lang="en">
 
 <head>
-	<title> Cheif's Cabinet</title>
-	<!--bootstrap file-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
-  <!-- JQuery -->
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <!--css-->
-  <link rel="stylesheet" href="assets/css/style.css">
-  
-<header id="masthead">
-    <div class="container">
-      <a href="index.html" id="logo">Chef's Cabinet </a>
-      <nav>
-				<a href="index.html">Home</a>
-        <a href="recipe.html?q=breakfast">Breakfast</a>
-        <a href="recipe.html?q=lunch">Lunch</a>
-				<a href="recipe.html?q=dinner">Dinner</a>
-				<a href="recipe.html?q=fish">Pescatarian</a>
-        <a href="recipe.html?q=vegan">Vegan</a>
-				<a href="recipe.html?q=dessert">Dessert</a>
-				<a href="resteraunts.html">Restaurants</a>
-      </nav>
-    </div>
-  </header>
-
+    <title> Cheif's Cabinet</title>
+    <!--bootstrap file-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!--css-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <header id="masthead">
+        <div class="container">
+            <a href="index.html" id="logo">Chef's Cabinet </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="recipe.html?q=breakfast">Breakfast</a>
+                <a href="recipe.html?q=lunch">Lunch</a>
+                <a href="recipe.html?q=dinner">Dinner</a>
+                <a href="recipe.html?q=fish">Pescatarian</a>
+                <a href="recipe.html?q=vegan">Vegan</a>
+                <a href="recipe.html?q=dessert">Dessert</a>
+                <a href="resteraunts.html">Restaurants</a>
+            </nav>
+        </div>
+    </header>
 </head>
+
 <body>
-
-
-  <!-- Overall Bootstrap Grid -->
-	<div class="container">
-	    <!-- Jumbotron with Title -->
-	    <div class="jumbotron">
-	      <h1 class="text-center"><strong>The Good Stuff!</strong></h1>
-	      <h4 class="text-center"></h4>
-	      <hr>
-	      <div class="text-center">
-	      	<form action="recipe.html" method="GET" id="recipe-form">
-			  <label for="recipe-input">What are you hungry for?:</label>
-			  <input type="text" name="q" class="form-control" id="recipe-input">
-			  <br>
-			  <input id="search-recipes" type="submit" value="Search">
-			</form>
-		  </div>      
-	    </div>
-		<div>
-			<div class="col-lg-8">
-	        	<!-- Image Col-->
-		        <div class="panel panel-default">
-		          <div class="panel-food">
-		            <h3 class="panel text-center">Food Results</h3>
-		          </div>
-		          <div class="panel">
-		          <div class="text-center" id="results">	              	
-		          </div>
-		          </div>
-		        </div>
-	        </div>
-	        <div class="col-lg-4">
-	        	<!-- Google Place-->
-		        <div class="panel panel-default">
-		          <div class="panel-place">
-		            <h3 class="panel text-center">Type in a Food choice for Nearby Restaurants </h3>
-		          </div>
-		          <div class="panel">
-		          <div class="text-center" id="results">
-			           <input type="text" name="place" class="place-control" id="place-input">
-				  				<br>
-									<input id="search-locations" type="submit" value="Search">
-		          </div>
-		          </div>
-		        </div>
-	        </div>
-		</div>
-
-	</div>
-
-<!--javaScript-->
-  <script src="assets/javascript/game.js"></script>
-		   
+    <!-- Overall Bootstrap Grid -->
+    <div class="container">
+        <!-- Jumbotron with Title -->
+        <div class="jumbotron">
+            <h1 class="text-center"><strong>The Good Stuff!</strong></h1>
+            <h4 class="text-center"></h4>
+            <hr>
+            <div class="text-center">
+                <form action="recipe.html" method="GET" id="recipe-form">
+                    <label for="recipe-input">What are you hungry for?:</label>
+                    <input type="text" name="q" class="form-control" id="recipe-input">
+                    <br>
+                    <input id="search-recipes" type="submit" value="Search">
+                </form>
+            </div>
+        </div>
+        <div>
+            <div class="col-lg-8">
+                <!-- Image Col-->
+                <div class="panel panel-default">
+                    <div class="panel-food">
+                        <h3 class="panel text-center">Food Results</h3>
+                    </div>
+                    <div class="panel">
+                        <div class="text-center" id="results">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <!-- Google Place-->
+                <div class="panel panel-default">
+                    <div class="panel-place">
+                        <h3 class="panel text-center">Type in a Food choice for Nearby Restaurants </h3>
+                    </div>
+                    <div class="panel">
+                        <div class="text-center" id="results">
+                            <input type="text" name="place" class="place-control" id="place-input">
+                            <br>
+                            <input id="search-locations" type="submit" value="Search">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--javaScript-->
+    <script src="assets/javascript/game.js"></script>
 
 </html>
