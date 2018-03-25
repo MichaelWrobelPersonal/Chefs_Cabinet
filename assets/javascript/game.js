@@ -47,8 +47,12 @@ $(document).ready(function() {
     if (getUrlVars()["q"]) {
         searchRecipes(getUrlVars()["q"]);
     }
-
-
+    else if (getUrlVars()["r"]) {
+//        let searchTerm = $("resteraunt-input").text();
+//        console.log(searchTerm);
+        setRestuarantSearch(getUrlVars()["r"]);
+        console.log(getUrlVars()["r"]);
+    }
 
     function searchRecipes(recipe) {
         //queryURL for food API
@@ -161,4 +165,12 @@ $(document).ready(function() {
         });
         return whereiam;
     }
+
+    function setRestuarantSearch(search) {
+       let queryMAP  = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBiqzJxSgSz6f4LGXMnfIC3VEC-NQe3d_g&q=restaurant+" + search;
+      console.log(queryMAP);
+      $("#map").attr("src", queryMAP);
+   }
+
+
 });
