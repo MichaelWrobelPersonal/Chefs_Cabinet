@@ -107,9 +107,15 @@ $(document).ready(function() {
             .then(data => {
                 console.log(data)
                 for (var i = 0; i < Math.min(10, data.results.length); i++) {
-                    var content = $("<div>");
+                    var content = $("<div>").attr("class", "placeName");
                     content.text(data.results[i].name);
                     $(".panel-place").append(content);
+
+                    var content = $("<div>").attr("class", "address");
+                    content.text(data.results[i].formatted_address);
+                    $(".panel-place").append(content);
+
+
                 }
                 photos = data.results[0].icon
                 console.log(photos)
