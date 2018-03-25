@@ -13,10 +13,13 @@ $(document).ready(function() {
   //variable to rep the database
   var database = firebase.database();
 
-  // Get users location
-  var location = getLocation();
-  console.log(location);
-  
+  // Get users location and center the map to it
+  //  setMyLocation();
+  // Note: Not needed if GoogleMaps is called without a location specified.
+  //       Its default is the user's current position.
+  //  Left in the above commented out HTML5 Geolocation code, to show our work
+  //  It probably needs to go into an OnLoad event hander just for the resteraunts ppge.
+
 // These handle the images
 $("#breakfast").on("click", function(event) { location.href = "recipe.html?q=breakfast" });
 $("#lunch").on("click", function(event) { location.href = "recipe.html?q=lunch"  });
@@ -118,26 +121,35 @@ function searchRecipes(recipe) {
     })
   });
 
+  function setMyLocation() {
+   if (navigator.geolocation)
+       navigator.geolocation.getCurrentPosition(setPosition);
+  }
+  function setPosition(position) {
+    var latlon = position.coords.latitude + ',' + position.coords.longitude;
+    let queryGEO  = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBiqzJxSgSz6f4LGXMnfIC3VEC-NQe3d_g&q=restaurant,&center=" + latlon;
+    console.log(queryGEO);
+    $("#map").attr("src", queryGEO);
+  }
 
-  function getLocation() {
     //queryURL for food API
 //    var Key = "AIzaSyCn2ZDoCa4-0SJWmCM3l_BGiB16qMZjK8c";
-    var key = "AIzaSyAowfvSBIR3IYnM0IuMk-hfbbntZaLpuo4";
-    var query = "https://www.googleapis.com/geolocation/v1/geolocate?key=" + key;
-    console.log(query);
-    var whereiam ="";
-    //ajax request
-      $.ajax({
-        url: query,
-        method: "GET",
-       headers: {
-         "Accept": "application/json"
-       },
-       dataType: "json"
-      }).then(function(result) {
-        console.log(result);
-        whereiam = result;
-      });
-      return whereiam;
-  }
+//    var key = "AIzaSyAowfvSBIR3IYnM0IuMk-hfbbntZaLpuo4";
+//    var query = "https://www.googleapis.com/geolocation/v1/geolocate?key=" + key;
+//    console.log(query);
+//    var whereiam ="";
+//    //ajax request
+//      $.ajax({
+//        url: query,
+//        method: "POST",
+//       headers: {
+//         "Accept": "application/json"
+//       },
+//       dataType: "json"
+//      }).then(function(result) {
+//        console.log(result);
+//        whereiam = result;
+//      });
+//      return whereiam;
+//  }
 });
