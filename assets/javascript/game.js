@@ -35,9 +35,9 @@ $(document).ready(function() {
     function getUrlVars() {
         var vars = [],
             hash;
-        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        var hashes = window.location.href.slice(window.location.href.indexOf("?") + 1).split("&");
         for (var i = 0; i < hashes.length; i++) {
-            hash = hashes[i].split('=');
+            hash = hashes[i].split("=");
             vars.push(hash[0]);
             vars[hash[0]] = hash[1];
         }
@@ -102,7 +102,7 @@ $(document).ready(function() {
     }
 
     $("#search-locations").on("click", function(event) {
-        console.log('hi')
+        console.log("Working!")
         event.preventDefault()
         // $.ajax{
         //     header: get,
@@ -112,10 +112,14 @@ $(document).ready(function() {
             "query": $("#place-input").val() + " in Cleveland, OH",
             "key": "AIzaSyDOotByZwSbRmyaQlyEIjGbr8nZNG_kb44"
         })
-        fetch('https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?' + params)
+
+        fetch("https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?" + params)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
+
+                $(".panel-place").empty();
+
                 for (var i = 0; i < Math.min(10, data.results.length); i++) {
                     var content = $("<div>").attr("class", "placeName");
                     content.text(data.results[i].name);
@@ -124,9 +128,10 @@ $(document).ready(function() {
                     var content = $("<div>").attr("class", "address");
                     content.text(data.results[i].formatted_address);
                     $(".panel-place").append(content);
-
-
                 }
+
+                $("#place-input").val("");
+
                 photos = data.results[0].icon
                 console.log(photos)
                 $("#photos").html("<img src=" + photos + ">")
@@ -138,7 +143,7 @@ $(document).ready(function() {
           navigator.geolocation.getCurrentPosition(setPosition);
     }
     function setPosition(position) {
-       var latlon = position.coords.latitude + ',' + position.coords.longitude;
+       var latlon = position.coords.latitude + "," + position.coords.longitude;
        let queryGEO  = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBiqzJxSgSz6f4LGXMnfIC3VEC-NQe3d_g&q=restaurant,&center=" + latlon;
        console.log(queryGEO);
        $("#map").attr("src", queryGEO);
@@ -174,26 +179,26 @@ $(document).ready(function() {
 
 
    //Scroll to top button
-    if ($('#back-to-top').length) {
+    if ($("#back-to-top").length) {
     var scrollTrigger = 100,
         backToTop = function () {
             var scrollTop = $(window).scrollTop();
             if (scrollTop > scrollTrigger) {
-                $('#back-to-top').addClass('show');
+                $("#back-to-top").addClass("show");
             } else {
-                $('#back-to-top').removeClass('show');
+                $("#back-to-top").removeClass("show");
             }
         };
 
     backToTop();
     
-    $(window).on('scroll', function () {
+    $(window).on("scroll", function () {
         backToTop();
     });
 
-    $('#back-to-top').on('click', function (e) {
+    $("#back-to-top").on("click", function (e) {
         e.preventDefault();
-        $('html,body').animate({
+        $("html,body").animate({
             scrollTop: 0
         }, 700);
       });

@@ -138,8 +138,10 @@ nav a:first-child {
     background-size: 400px 300px;
 }
 
-#search-recipes {
+#search-recipes,
+#search-locations {
     background-color: black;
+    color: white;
 }
 
 #search-restaurants {
@@ -176,11 +178,13 @@ nav a:first-child {
 div.address {
     color:blue;
     margin-bottom: 10px;
+    padding-left: 15px;
 }
 
 div.placeName {
     color:black;
     font-size: 20px;
+    padding-left: 15px;
     }
 
 #back-to-top {
@@ -219,5 +223,4 @@ footer {
   text-align: center;
   background-color: black;
   color:white;
-
 }
