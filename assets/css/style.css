@@ -132,7 +132,7 @@ nav a:first-child {
 }
 
 .panel-dessert {
-    background-image: url('../images/drink.jpg');
+    background-image: url('../images/dessert.jpg');
     height: 200px;
     background-repeat: no-repeat;
     background-size: 400px 300px;
@@ -211,4 +211,13 @@ div.placeName {
 
 #back-to-top.show {
     opacity: 1;
+}
+
+footer {
+  padding:50px;
+  clear: both;
+  text-align: center;
+  background-color: black;
+  color:white;
+
 }
