@@ -62,15 +62,14 @@
                 <!-- Google Place-->
                 <div class="panel panel-default">
                     <h3 class="panel-header text-center">Type in a Food choice for Nearby Restaurants </h3>
-                    <div class="panel">
-                        <div class="text-center" id="results">
+                    <div class="panel text-center">
+                        <p id="requiredField"> Required fields are marked with <span style="color: red">*</span></p>
+                        <div class="text-center nearbySearchBox" id="results">
                             <form>
-                                <h5>Restaurant Search:</h5>
-                                <input type="text" name="place" class="place-control" id="place-input">
-                                <br>
-                                <h5>Zip Code:</h5>
-                                <input type="text" name="place" class="place-control" id="zipCode">
-                                <br>
+                                <h5>Restaurant Search <span style="color: red">*</span></h5>
+                                <input type="text" required name="place" class="place-control" id="place-input">
+                                <h5>Zip Code <span style="color: red">*</span></h5>
+                                <input type="text" required name="place" class="place-control" id="zipCode">
                                 <br>
                                 <input id="search-locations" type="submit" value="Search">
                             </form>

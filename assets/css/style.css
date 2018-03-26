@@ -189,6 +189,18 @@ div.placeName {
     padding-right: 15px;
     }
 
+#place-input {
+  margin-bottom: 0px;
+}
+
+#zipCode {
+  margin-bottom: 10px;
+}
+
+.nearbySearchBox {
+  margin-top: 40px;
+}
+
 #back-to-top {
     font-size: 20px;
     font-weight: bold;
