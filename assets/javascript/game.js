@@ -109,7 +109,7 @@ $(document).ready(function() {
         //     url: asdfalsdjfj
         // }
         const params = $.param({
-            "query": $("#place-input").val() + " in Cleveland, OH",
+            "query": $("#place-input").val() + " in " + $("#zipCode").val(),
             "key": "AIzaSyDOotByZwSbRmyaQlyEIjGbr8nZNG_kb44"
         })
 
@@ -131,6 +131,7 @@ $(document).ready(function() {
                 }
 
                 $("#place-input").val("");
+                $("#zipCode").val("");
 
                 photos = data.results[0].icon
                 console.log(photos)
