@@ -121,13 +121,20 @@ $(document).ready(function() {
                 $(".panel-place").empty();
 
                 for (var i = 0; i < Math.min(10, data.results.length); i++) {
-                    var content = $("<div>").attr("class", "placeName");
-                    content.text(data.results[i].name);
-                    $(".panel-place").append(content);
 
-                    var content = $("<div>").attr("class", "address");
-                    content.text(data.results[i].formatted_address);
-                    $(".panel-place").append(content);
+                    var formcnt = $("<form>").attr("class", "restuarant-list-form" );
+                    formcnt.attr("action", "resteraunts.html");
+                    formcnt.attr("method", "GET");
+                    var namecnt = $("<div>").attr("class", "placeName");
+                    namecnt.text(data.results[i].name);
+                    formcnt.append(namecnt);
+                    var inputcon = $("<input>").attr("id","goto-map-location" );
+                    inputcon.attr("type", "submit");
+                    inputcon.attr("name", "r");
+                    inputcon.attr("class", "placeAddress");
+                    inputcon.attr("value", data.results[i].formatted_address);
+                    formcnt.append(inputcon);
+                    $(".panel-place").append(formcnt);
                 }
 
                 $("#place-input").val("");
