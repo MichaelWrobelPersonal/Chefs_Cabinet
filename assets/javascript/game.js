@@ -60,7 +60,6 @@ $(document).ready(function() {
         var queryURL = "https://cors-anywhere.herokuapp.com/food2fork.com/api/search?key=" + APIKey + "&q=" + recipe;
         console.log(queryURL)
 
-
         //ajax request
         $.ajax({
             url: queryURL,
